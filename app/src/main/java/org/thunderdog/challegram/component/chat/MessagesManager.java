@@ -913,10 +913,6 @@ public class MessagesManager implements Client.ResultHandler, MessagesSearchMana
   private void scrollToBottom (boolean smooth) {
     stopScroll();
 
-    if (!controller.sponsoredMessageLoaded) {
-      requestSponsoredMessage();
-    }
-
     if (!Config.SMOOTH_SCROLL_TO_BOTTOM_ENABLED || !smooth) {
       if (adapter.getBottomMessage() != null && adapter.getBottomMessage().isSponsoredMessage()) {
         controller.setScrollToBottomVisible(false, false, false);
@@ -1316,9 +1312,7 @@ public class MessagesManager implements Client.ResultHandler, MessagesSearchMana
     checkMessageThreadUnreadCounter();
   }
 
-  public void onBottomEndChecked () {
-    requestSponsoredMessage();
-  }
+  public void onBottomEndChecked () {}
 
   private void checkTopEndReached (List<TGMessage> items, boolean willRepeat, boolean canLoadTop) {
     if (shouldInsertHeaderMessage()) {

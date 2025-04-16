@@ -435,9 +435,6 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesHolder> {
   }
 
   public boolean addMessage (TGMessage message, boolean top, boolean needScrollToBottom) {
-    if (message.isSponsoredMessage()) {
-      return false;
-    }
 
     if (manager.needRemoveDuplicates() && indexOfMessageContainer(message.getId()) != -1)
       return false;
