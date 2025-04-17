@@ -2711,7 +2711,6 @@ public abstract class BaseActivity extends ComponentActivity implements View.OnT
         disallowScreenshots = true;
       }
     }
-    setDisallowScreenshots(disallowScreenshots);
   }
 
   private void setDisallowScreenshots (boolean disallow) {
