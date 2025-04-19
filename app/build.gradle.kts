@@ -447,6 +447,14 @@ dependencies {
   // TODO: upgrade to "com.googlecode.mp4parser:isoparser:1.1.22" or latest
   // mp4parser: https://github.com/sannies/mp4parser/releases
   implementation("com.googlecode.mp4parser:isoparser:1.0.6")
+
+  // Room Database
+  val room_version = "2.4.3"
+  annotationProcessor("androidx.room:room-compiler:$room_version")
+  implementation("androidx.room:room-ktx:$room_version")
+  // Kotlin Coroutines
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 }
 
 if (!isExperimentalBuild) {
