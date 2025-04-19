@@ -1536,7 +1536,7 @@ public class MediaItem implements MessageSourceProvider, InvalidateContentProvid
   }
 
   public boolean isViewOnce () {
-    return msg != null && msg.selfDestructType != null && msg.selfDestructType.getConstructor() == TdApi.MessageSelfDestructTypeImmediately.CONSTRUCTOR;
+    return false;
   }
 
   public void viewContent (boolean isClosed) {

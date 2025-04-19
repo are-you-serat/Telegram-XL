@@ -5523,7 +5523,8 @@ public abstract class TGMessage implements InvalidateContentProvider, TdlibDeleg
   // Hot stuff
 
   public boolean isHot () {
-    return ChatId.isUserChat(msg.chatId) && Td.isSecret(msg.content);
+    // Убирает long press экран с огоньком. Нет long press экрана - нет тригера для самоуничтожения
+    return false;
     // return msg.ttl > 0 && ((chat != null && chat.type.getConstructor() == TdApi.ChatTypePrivate.CONSTRUCTOR) || msg.ttl <= 60) && (flags & FLAG_EVENT_LOG) == 0 && !isEventLog();
   }
 
